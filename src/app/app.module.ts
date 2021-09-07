@@ -13,6 +13,17 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
+import { TimePickerComponent } from './components/time-picker/time-picker.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MatDatepickerModule } from '@angular/material/datepicker';
+// import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { MatDatepickerModule } from '@matheo/datepicker';
+import { MatNativeDateModule } from '@matheo/datepicker/core';
 
 @NgModule({
   declarations: [
@@ -21,7 +32,8 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    TimePickerComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +42,15 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    BrowserAnimationsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
